@@ -58,6 +58,8 @@ bot.on('message', message => {
 
 bot.on('ready', () => {
     console.log('PultionRp est prêt!');
+    bot.user.setStatus('dnd');
+    bot.user.setGame('PultionRp')
 });
 
 bot.login(process.env.token);
