@@ -7,7 +7,7 @@ bot.on('guildMemberAdd', member => {
 
     let serverTag = member.guild.name
     const welcomechannel = member.guild.channels.find('id', '599169877873262593')
-    const role = member.guild.roles.find("name", "Non-Approuvé")    
+    const role = member.guild.roles.get("602055616667844608")    
     member.addRole(role)
     var embed = new Discord.RichEmbed()
     .setColor('#76D880')
