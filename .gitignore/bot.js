@@ -6,7 +6,7 @@ var prefix = ("+");
 bot.on('guildMemberAdd', member => {
 
     let serverTag = member.guild.name
-    const welcomechannel = member.guild.channels.name('name', '🚀-bienvenue' )
+    const welcomechannel = member.guild.channels.find(channel => channel.name === "🚀-bienvenue");
     const role = member.guild.roles.get("602055616667844608")    
     member.addRole(role)
     var embed = new Discord.RichEmbed()
@@ -17,7 +17,7 @@ bot.on('guildMemberAdd', member => {
 bot.on('guildMemberRemove', member => {
 
     let serverTag = member.guild.name
-    const welcomechannel = member.guild.channels.name('name', '🚀-bienvenue' )
+    const welcomechannel = member.guild.channels.find(channel => channel.name === "🚀-bienvenue");
     var embed = new Discord.RichEmbed()
     .setColor('#FF0000')
     .setDescription(`Ho non part pas <@${member.user.id}> tu vas beaucoup me manquer  :sob: `)
