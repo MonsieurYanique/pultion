@@ -25,6 +25,8 @@ bot.on('guildMemberRemove', member => {
     return welcomechannel.send({embed})
 });
 
+
+    
 bot.on('message', function(message) {
     if (message.content == "+purge") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
