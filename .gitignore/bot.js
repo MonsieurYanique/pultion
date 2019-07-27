@@ -12,6 +12,7 @@ bot.on('guildMemberAdd', member => {
     var embed = new Discord.RichEmbed()
     .setColor('#76D880')
     .setDescription(`Hello l'ami bienvenue <@${member.user.id}> sur le serveur ${serverTag}, je t'invite a allez faire t'a carte d'identité dans #🖊-carte-identité pour avoir le fameux rôle Citoyen `)
+    return welcomechannel.send({embed})
 });
 
 bot.on('guildMemberRemove', member => {
@@ -21,6 +22,7 @@ bot.on('guildMemberRemove', member => {
     var embed = new Discord.RichEmbed()
     .setColor('#FF0000')
     .setDescription(`Ho non part pas <@${member.user.id}> tu vas beaucoup me manquer  :sob: `)
+    return welcomechannel.send({embed})
 });
 
 bot.on('message', function(message) {
