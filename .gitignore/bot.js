@@ -6,8 +6,8 @@ var prefix = ("+");
 bot.on('guildMemberAdd', member => {
 
     let serverTag = member.guild.name
-    const welcomechannel = member.guild.channels.find('id', '599169877873262593')
-    const role = member.guild.roles.get("602055616667844608")    
+    const welcomechannel = member.guild.channels.find('id', '609439080500953089')
+    const role = member.guild.roles.get("610117277206970368")    
     member.addRole(role)
     var embed = new Discord.RichEmbed()
     .setColor('#76D880')
@@ -18,7 +18,7 @@ bot.on('guildMemberAdd', member => {
 bot.on('guildMemberRemove', member => {
 
     let serverTag = member.guild.name
-    const welcomechannel = member.guild.channels.find('id', '599169877873262593')
+    const welcomechannel = member.guild.channels.find('id', '609439080500953089')
     var embed = new Discord.RichEmbed()
     .setColor('#FF0000')
     .setDescription(`Ho non part pas <@${member.user.id}> tu vas beaucoup me manquer  :sob: `)
@@ -38,25 +38,12 @@ bot.on('message', function(message) {
     }
 });
 
-bot.on('message', message => {
-    if (message.content.startsWith('+suggestion')) {
-    message.delete();
-
-          const channel = message.guild.channels.find('id', '595938095531294730');
-          const args = message.content.slice(12).trim().split(/ +/g);
-          let suggestion = args.slice(0).join(" ");
-          if (!channel) return;
-  
-          let embed = new Discord.RichEmbed()
-          .setColor("#55FFFF")
-          .setDescription('▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n▬▬▬▬▬▬▬▬▬**«    PultionRp Suggestion    »**▬▬▬▬▬▬▬▬▬▬\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n**Suggestion par »** ' + message.author + '\n\n**Suggestion »** ' + suggestion + '\n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n▬▬▬▬▬▬▬▬▬▬▬▬**«**     @everyone     **»**▬▬▬▬▬▬▬▬▬▬▬▬\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬')
-          .setFooter('PultionRp', bot.user.avatarURL)
-  
-          channel.send(embed).then(sentEmbed => {
-            sentEmbed.react("👍")
-            sentEmbed.react("👎")
-        })
-  
+  client.on('message', message => {
+    if (message.channel.id === "610121135199223808") {
+        message.react('👍')
+            .then(() => { 
+                message.react('👎')
+            });
     }
   });
 
