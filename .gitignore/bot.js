@@ -38,7 +38,7 @@ bot.on('message', function(message) {
     }
 });
 
-  client.on('message', message => {
+  bot.on('message', message => {
     if (message.channel.id === "610121135199223808") {
         message.react('👍')
             .then(() => { 
